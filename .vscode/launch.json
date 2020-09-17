@@ -7,11 +7,19 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "启动程序",
+            "name": "JS",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "program": "${file}"
+        },
+        {
+            "type": "node",
+            "request":"launch",
+            "name": "TS",
+            "program": "${file}",
+            "preLaunchTask": "tsc: 构建 - tsconfig.json",
+            "outFiles": ["${workspaceFolder}/JS/*.js"],
         }
     ]
 }
